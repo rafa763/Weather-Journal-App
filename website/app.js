@@ -4,7 +4,7 @@ let newDate = d.getMonth()+ 1 +'.'+ d.getDate()+'.'+ d.getFullYear();
 
 // Global variables
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = '&appid=3144c1b8f87a407ef1334cd8027a702b';
+const apiKey = '&appid=3144c1b8f87a407ef1334cd8027a702b&units=metric';
 let server = 'http://127.0.0.1:5000';
 
 
@@ -79,7 +79,7 @@ const updateUI = async ()=>{
         const allData = await request.json();
         document.getElementById('wrapper').innerHTML = 'Most Recent Entry';
         document.getElementById('name').innerHTML = `state: ${allData.name}`;
-        document.getElementById('temp').innerHTML = `temperature: ${allData.temp} F`;
+        document.getElementById('temp').innerHTML = `temperature: ${allData.temp} &degC`;
         document.getElementById('date').innerHTML = `date: ${allData.date}`;
         document.getElementById('content').innerHTML = `status: ${allData.userResponse}`;
     } catch(error) {
